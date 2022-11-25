@@ -30,5 +30,5 @@ posicionado no 3; o dos minutos no 5; e o dos segundos no 10.
 
  */
 
-public class RelogioAplicacao {
+public class Relogio {
 }
