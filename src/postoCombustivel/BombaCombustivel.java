@@ -1,5 +1,6 @@
 package postoCombustivel;
 
+//TODO Refatorar e fazer melhorias na classe
 public class BombaCombustivel {
     //Atributos
     String tipoCombustivel;
