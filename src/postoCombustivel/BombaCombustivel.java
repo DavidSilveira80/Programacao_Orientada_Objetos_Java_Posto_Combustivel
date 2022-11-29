@@ -1,6 +1,6 @@
 package postoCombustivel;
 
-//TODO Refatorar os métodos e fazer melhorias
+//TODO refatorar tipos e nomes das variáveis
 public class BombaCombustivel {
     //Atributos
     String tipoCombustivel;
@@ -61,8 +61,8 @@ public class BombaCombustivel {
         saidaAlterarValorporLitro = String.format("Valor por Litro alterado para: R$ %.2f.", valorPorLitro);
         return saidaAlterarValorporLitro;
     }
-    public void alterarLitrosEstoque(float le){
+    public String alterarLitrosEstoque(float le){
         quantidadeDeCombustivel = le;
-        System.out.printf("Litros em Estoque alterado para: %.3f\n", quantidadeDeCombustivel);
+        return String.format("Litros em Estoque alterado para: %.3f.", quantidadeDeCombustivel);
     }
 }
