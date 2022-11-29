@@ -52,7 +52,5 @@ public class TesteBombaCombustivel {
                 "Gasolina");
         Assertions.assertEquals("8.80", bombaGasolina.abastecerPorValor(8.80f));
         Assertions.assertEquals(4998f, bombaGasolina.quantidadeDeCombustivel);
-
     }
-
 }
