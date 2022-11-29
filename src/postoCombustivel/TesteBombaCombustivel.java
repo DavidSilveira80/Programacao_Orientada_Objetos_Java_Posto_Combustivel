@@ -42,7 +42,7 @@ public class TesteBombaCombustivel {
         Locale.setDefault(Locale.US);
         BombaCombustivel bombaGasolina = new BombaCombustivel(5000f, 4.40f,
                 "Gasolina");
-        Assertions.assertEquals(8.80f, bombaGasolina.abastecerPorValor(8.80f));
+        Assertions.assertEquals("8.80", bombaGasolina.abastecerPorValor(8.80f));
         Assertions.assertEquals(4998f, bombaGasolina.quantidadeDeCombustivel);
 
     }
