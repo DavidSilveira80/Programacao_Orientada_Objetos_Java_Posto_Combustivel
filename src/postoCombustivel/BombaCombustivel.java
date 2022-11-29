@@ -1,6 +1,6 @@
 package postoCombustivel;
 
-//TODO refatorar tipos e nomes das variáveis
+//TODO encapsular atributos
 public class BombaCombustivel {
     //Atributos
     String tipoCombustivel;
