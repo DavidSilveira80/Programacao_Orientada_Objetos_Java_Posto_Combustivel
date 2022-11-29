@@ -53,9 +53,11 @@ public class BombaCombustivel {
         return saidaAlterarTipoCombustivel;
     }
 
-    public void alterarValorPorLitro(float vl){
+    public String alterarValorPorLitro(float vl){
+        String saidaAlterarValorporLitro = "";
         valorPorLitro = vl;
-        System.out.printf("Valor por Litro alterado para: R$ %.2f.\n", valorPorLitro);
+        saidaAlterarValorporLitro = String.format("Valor por Litro alterado para: R$ %.2f.", valorPorLitro);
+        return saidaAlterarValorporLitro;
     }
     public void alterarLitrosEstoque(float le){
         quantidadeDeCombustivel = le;

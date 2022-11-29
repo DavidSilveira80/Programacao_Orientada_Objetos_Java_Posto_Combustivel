@@ -13,12 +13,20 @@ public class TesteBombaCombustivel {
                 "Litros em Estoque: 10000.000\n", bombaGasolina.consultar());
     }
     @Test
-    void TesteBombaAlterartipoCombustivelAlcoolParaDiesel(){
+    void testeBombaAlterartipoCombustivelAlcoolParaDiesel(){
         BombaCombustivel bombaAlcoolParaDiesel = new BombaCombustivel(5000f,
                 4.00f, "Álcool" );
 
         Assertions.assertEquals("Tipo de Combustivel alterado para: Diesel.",
                 bombaAlcoolParaDiesel.alterarTipoCombustivel('D'));
+    }
+    @Test
+    void testeBombaGasolinaAlteraValorPorlitro4e58Para4e40(){
+        Locale.setDefault(Locale.US);
+        BombaCombustivel bombaGasolina = new BombaCombustivel(5000f, 4.58f,
+                "Gasolina");
+        float valorPorlitro = 4.40f;
+        Assertions.assertEquals("Valor por Litro alterado para: R$ 4.40.", bombaGasolina.alterarValorPorLitro(valorPorlitro));
     }
 
 }
