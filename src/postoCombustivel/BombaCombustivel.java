@@ -1,17 +1,42 @@
 package postoCombustivel;
 
-//TODO encapsular atributos
+
 public class BombaCombustivel {
     //Atributos
-    String tipoCombustivel;
-    double valorPorLitro;
-    double quantidadeDeCombustivel;
+    private String tipoCombustivel;
+    private double valorPorLitro;
+    private double quantidadeDeCombustivel;
 
     //Construtor
     public BombaCombustivel(double quantidadeDeCombustivel, double valorPorLitro, String tipoCombustivel){
         this.quantidadeDeCombustivel = quantidadeDeCombustivel;
         this.valorPorLitro = valorPorLitro;
         this.tipoCombustivel = tipoCombustivel;
+    }
+    //Getters e Setters
+
+    public String getTipoCombustivel() {
+        return tipoCombustivel;
+    }
+
+    public void setTipoCombustivel(String tipoCombustivel) {
+        this.tipoCombustivel = tipoCombustivel;
+    }
+
+    public double getValorPorLitro() {
+        return valorPorLitro;
+    }
+
+    public void setValorPorLitro(double valorPorLitro) {
+        this.valorPorLitro = valorPorLitro;
+    }
+
+    public double getQuantidadeDeCombustivel() {
+        return quantidadeDeCombustivel;
+    }
+
+    public void setQuantidadeDeCombustivel(double quantidadeDeCombustivel) {
+        this.quantidadeDeCombustivel = quantidadeDeCombustivel;
     }
 
     //Métodos

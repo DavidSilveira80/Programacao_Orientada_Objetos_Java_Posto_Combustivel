@@ -1,5 +1,5 @@
 package postoCombustivel;
-
+//TODO implementar programa Posto
 import java.util.Locale;
 public class Posto {
     public static void main(String[] args) {

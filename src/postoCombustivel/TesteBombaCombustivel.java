@@ -43,7 +43,7 @@ public class TesteBombaCombustivel {
                 "Gasolina");
 
         Assertions.assertEquals("8.80", bombaGasolina.abastecerPorLitro(2));
-        Assertions.assertEquals(4998, bombaGasolina.quantidadeDeCombustivel);
+        Assertions.assertEquals(4998, bombaGasolina.getQuantidadeDeCombustivel());
     }
     @Test
     void testeBombaGasolinaAbastecerPorValor(){
@@ -51,6 +51,6 @@ public class TesteBombaCombustivel {
         BombaCombustivel bombaGasolina = new BombaCombustivel(5000, 4.40,
                 "Gasolina");
         Assertions.assertEquals("8.80", bombaGasolina.abastecerPorValor(8.80));
-        Assertions.assertEquals(4998, bombaGasolina.quantidadeDeCombustivel);
+        Assertions.assertEquals(4998, bombaGasolina.getQuantidadeDeCombustivel());
     }
 }
