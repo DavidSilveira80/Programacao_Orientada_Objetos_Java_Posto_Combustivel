@@ -4,27 +4,27 @@ package postoCombustivel;
 public class BombaCombustivel {
     //Atributos
     String tipoCombustivel;
-    float valorPorLitro;
-    float quantidadeDeCombustivel;
+    double valorPorLitro;
+    double quantidadeDeCombustivel;
 
     //Construtor
-    public BombaCombustivel(float quantidadeDeCombustivel, float valorPorLitro, String tipoCombustivel){
+    public BombaCombustivel(double quantidadeDeCombustivel, double valorPorLitro, String tipoCombustivel){
         this.quantidadeDeCombustivel = quantidadeDeCombustivel;
         this.valorPorLitro = valorPorLitro;
         this.tipoCombustivel = tipoCombustivel;
     }
 
     //Métodos
-    public String abastecerPorLitro(float litrosAbastecer){
-        float pagarValor = litrosAbastecer * this.valorPorLitro;
+    public String abastecerPorLitro(double litrosAbastecer){
+        double pagarValor = litrosAbastecer * this.valorPorLitro;
         this.quantidadeDeCombustivel -= litrosAbastecer;
         return String.format("%.2f", pagarValor);
     }
 
-    public String abastecerPorValor(float valorAbastecer){
-        float litrosPorValor = valorAbastecer / this.valorPorLitro;
+    public String abastecerPorValor(double valorAbastecer){
+        double litrosPorValor = valorAbastecer / this.valorPorLitro;
         this.quantidadeDeCombustivel -= litrosPorValor;
-        float pagarValor = litrosPorValor * this.valorPorLitro;
+        double pagarValor = litrosPorValor * this.valorPorLitro;
         return String.format("%.2f", pagarValor);
     }
 
@@ -57,14 +57,14 @@ public class BombaCombustivel {
         return saidaAlterarTipoCombustivel;
     }
 
-    public String alterarValorPorLitro(float novoValorPorLitro){
+    public String alterarValorPorLitro(double novoValorPorLitro){
         String saidaAlterarValorporLitro = "";
         this.valorPorLitro = novoValorPorLitro;
         saidaAlterarValorporLitro = String.format("Valor por Litro alterado para: R$ %.2f.", this.valorPorLitro);
         return saidaAlterarValorporLitro;
     }
 
-    public String alterarLitrosEstoque(float novoEstoqueLitro){
+    public String alterarLitrosEstoque(double novoEstoqueLitro){
         this.quantidadeDeCombustivel = novoEstoqueLitro;
         return String.format("Litros em Estoque alterado para: %.3f.", this.quantidadeDeCombustivel);
     }
