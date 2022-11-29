@@ -19,11 +19,11 @@ public class BombaCombustivel {
         return String.format("%.2f", pagarValor);
     }
 
-    public float abastecerPorValor(float v){
+    public String abastecerPorValor(float v){
         float litrosPorValor = v / valorPorLitro;
         quantidadeDeCombustivel -= litrosPorValor;
         float pagarValor = litrosPorValor * valorPorLitro;
-        return pagarValor;
+        return String.format("%.2f", pagarValor);
     }
 
     public String consultar(){
