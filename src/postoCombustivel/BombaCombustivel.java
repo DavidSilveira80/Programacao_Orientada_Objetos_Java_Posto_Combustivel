@@ -1,6 +1,6 @@
 package postoCombustivel;
 
-//TODO Refatorar e fazer melhorias na classe
+//TODO Refatorar os métodos e fazer melhorias
 public class BombaCombustivel {
     //Atributos
     String tipoCombustivel;
@@ -24,10 +24,11 @@ public class BombaCombustivel {
         return litrosPorValor;
     }
 
-    public void consultar(){
-        System.out.printf("Tipo de Combustivel: %s\n", tipoCombustivel);
-        System.out.printf("Valor por Litro: R$ %.2f\n", valorPorLitro);
-        System.out.printf("Litros em Estoque: %3f\n", quantidadeDeCombustivel);
+    public String consultar(){
+       String saidaConsulta = "";
+       saidaConsulta = String.format("Tipo de Combustivel: %s\nValor por Litro: R$ %.2f\n" +
+                "Litros em Estoque: %3f\n", tipoCombustivel, valorPorLitro,  quantidadeDeCombustivel);
+        return saidaConsulta;
     }
     public void alterarTipoCombustivel(char comb){
         if(comb == 'G'){

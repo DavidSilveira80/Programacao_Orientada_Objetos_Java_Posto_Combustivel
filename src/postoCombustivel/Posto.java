@@ -10,9 +10,9 @@ public class Posto {
         BombaCombustivel bombaAlcool = new BombaCombustivel(10000f, 4.00f, "Álcool");
         BombaCombustivel bombaEtanol = new BombaCombustivel(10000f, 4.35f, "Etanol" );
 
-        bombaGasolina.consultar();
-        bombaDiesel.consultar();
-        bombaAlcool.consultar();
-        bombaEtanol.consultar();
+        System.out.println(bombaGasolina.consultar());
+        System.out.println(bombaDiesel.consultar());
+        System.out.println(bombaAlcool.consultar());
+        System.out.println(bombaEtanol.consultar());
     }
 }
