@@ -27,24 +27,32 @@ public class BombaCombustivel {
     public String consultar(){
        String saidaConsulta = "";
        saidaConsulta = String.format("Tipo de Combustivel: %s\nValor por Litro: R$ %.2f\n" +
-                "Litros em Estoque: %3f\n", tipoCombustivel, valorPorLitro,  quantidadeDeCombustivel);
+                "Litros em Estoque: %.3f\n", tipoCombustivel, valorPorLitro,  quantidadeDeCombustivel);
         return saidaConsulta;
     }
-    public void alterarTipoCombustivel(char comb){
+
+    public String alterarTipoCombustivel(char comb){
+        String saidaAlterarTipoCombustivel = "";
         if(comb == 'G'){
             tipoCombustivel = "Gasolina";
-            System.out.printf("Tipo de Combustivel alterado para: %s.\n", tipoCombustivel);
+            saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
+                    "%s.", tipoCombustivel);
         }else if(comb == 'D'){
             tipoCombustivel = "Diesel";
-            System.out.printf("Tipo de Combustivel alterado para: %s.\n", tipoCombustivel);
+            saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
+                    "%s.", tipoCombustivel);
         }else if(comb == 'A'){
             tipoCombustivel = "Álcool";
-            System.out.printf("Tipo de Combustivel alterado para: %s.\n", tipoCombustivel);
+            saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
+                    "%s.", tipoCombustivel);
         }else if(comb == 'E'){
             tipoCombustivel = "Etanol";
-            System.out.printf("Tipo de Combustivel alterado para: %s.\n", tipoCombustivel);
+            saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
+                    "%s.", tipoCombustivel);
         }
+        return saidaAlterarTipoCombustivel;
     }
+
     public void alterarValorPorLitro(float vl){
         valorPorLitro = vl;
         System.out.printf("Valor por Litro alterado para: R$ %.2f.\n", valorPorLitro);
