@@ -28,5 +28,25 @@ public class TesteBombaCombustivel {
         float valorPorlitro = 4.40f;
         Assertions.assertEquals("Valor por Litro alterado para: R$ 4.40.", bombaGasolina.alterarValorPorLitro(valorPorlitro));
     }
+    @Test
+    void testeBombaGasolinaAbastecerPorLitro(){
+        Locale.setDefault(Locale.US);
+        BombaCombustivel bombaGasolina = new BombaCombustivel(5000f, 4.40f,
+                "Gasolina");
+
+        Assertions.assertEquals("8.80", bombaGasolina.abastecerPorLitro(2));
+        Assertions.assertEquals(4998f, bombaGasolina.quantidadeDeCombustivel);
+    }
+    @Test
+    void testeBombaGasolinaAbastecerPorValor(){
+        Locale.setDefault(Locale.US);
+        BombaCombustivel bombaGasolina = new BombaCombustivel(5000f, 4.40f,
+                "Gasolina");
+        Assertions.assertEquals(8.80f, bombaGasolina.abastecerPorValor(8.80f));
+        Assertions.assertEquals(4998f, bombaGasolina.quantidadeDeCombustivel);
+
+    }
+
+
 
 }

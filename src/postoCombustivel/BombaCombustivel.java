@@ -13,15 +13,17 @@ public class BombaCombustivel {
         this.tipoCombustivel = tipoCombustivel;
     }
 
-    public float abastecerPorLitro(float qtdLitros){
+    public String abastecerPorLitro(float qtdLitros){
         float pagarValor = qtdLitros * valorPorLitro;
-        return pagarValor;
+        quantidadeDeCombustivel -= qtdLitros;
+        return String.format("%.2f", pagarValor);
     }
 
     public float abastecerPorValor(float v){
         float litrosPorValor = v / valorPorLitro;
         quantidadeDeCombustivel -= litrosPorValor;
-        return litrosPorValor;
+        float pagarValor = litrosPorValor * valorPorLitro;
+        return pagarValor;
     }
 
     public String consultar(){
