@@ -1,5 +1,5 @@
 package postoCombustivel;
-//TODO Implementar consultas das bombas de combustíveis
+//TODO Implementar Abastecimento
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ public class Posto {
         System.out.println("BEM-VINDO AO POSTO SILVEIRA");
         int parada = 1;
         while (parada == 1) {
-            System.out.println("1 - Gerar Bomba de Combustível 2 - Abastecer 4 - Sair");
+            System.out.println("1 - Gerar Bomba de Combustível 2 - Consultar Status das Bombas 4 - Sair");
             System.out.print("Informe opção: ");
             int opcao = entrada.nextInt();
             switch (opcao) {
@@ -42,6 +42,7 @@ public class Posto {
                             System.out.println();
                             break;
                         case 'D':
+                            System.out.println();
                             System.out.println("GERAR BOMBA COMBUSTÍVEL DIESEL");
                             System.out.print("Informe o Estoque em Litros: ");
                             double estoqueDiesel = entrada.nextDouble();
@@ -56,6 +57,7 @@ public class Posto {
                             System.out.println();
                             break;
                         case 'A':
+                            System.out.println();
                             System.out.println("GERAR BOMBA COMBUSTÍVEL ÁLCOOL");
                             System.out.print("Informe o Estoque em Litros: ");
                             double estoqueAlcool = entrada.nextDouble();
@@ -70,6 +72,7 @@ public class Posto {
                             System.out.println();
                             break;
                         case 'E':
+                            System.out.println();
                             System.out.println("GERAR BOMBA COMBUSTÍVEL ETANOL");
                             System.out.print("Informe o Estoque em Litros: ");
                             double estoqueEtanol = entrada.nextDouble();
@@ -88,9 +91,48 @@ public class Posto {
                     }
                     break;
                 case 2:
-                    System.out.println("ABASTECER");
-                    System.out.println("(G) -> GASOLINA (D) -> DIESEL (A) -> ÁLCOOL (E) -> ETANOL");
+                    System.out.println();
+                    System.out.println("CONSULTAR STATUS DAS BOMBAS");
+                    System.out.print("Informe qual Bomba quer consultar: (G) -> GASOLINA (D) -> DIESEL (A) -> ÁLCOOL (E) -> " +
+                            "ETANOL:  ");
+                    char consultaBomba = entrada.next().charAt(0);
+                    switch(consultaBomba){
+                        case 'G':
+                            System.out.println();
+                            System.out.println("CONSULTANDO STATUS BOMBA GASOLINA");
+                            System.out.println();
+                            System.out.println(bombaPostoGasolina.consultar());
+                            System.out.println();
+                            break;
 
+                        case 'D':
+                            System.out.println();
+                            System.out.println("CONSULTANDO STATUS BOMBA DIESEL");
+                            System.out.println();
+                            System.out.println(bombaPostoDiesel.consultar());
+                            System.out.println();
+                            break;
+
+                        case 'A':
+                            System.out.println();
+                            System.out.println("CONSULTANDO STATUS BOMBA ÁLCOOL");
+                            System.out.println();
+                            System.out.println(bombaPostoAlcool.consultar());
+                            System.out.println();
+                            break;
+
+                        case 'E':
+                            System.out.println();
+                            System.out.println("CONSULTANDO STATUS BOMBA ETANOL");
+                            System.out.println();
+                            System.out.println(bombaPostoEtanol.consultar());
+                            System.out.println();
+                            break;
+
+                        default:
+                            System.out.println("OPÇÃO INVÁLIDA. TENTE NOVAMENTE.");
+                    }
+                    break;
                 case 4:
                     System.out.println("ENCERRANDO. VOLTE SEMPRE.");
                     parada = 2;
