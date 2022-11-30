@@ -42,7 +42,7 @@ public class Posto {
                             System.out.println();
                             break;
                         case 'D':
-                            System.out.println("GERAR BOMBA COMBUSTÍVEL GASOLINA");
+                            System.out.println("GERAR BOMBA COMBUSTÍVEL DIESEL");
                             System.out.print("Informe o Estoque em Litros: ");
                             double estoqueDiesel = entrada.nextDouble();
                             System.out.print("Informe o valor por Litro: R$ ");
