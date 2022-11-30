@@ -40,17 +40,16 @@ public class BombaCombustivel {
     }
 
     //Métodos
-    public String abastecerPorLitro(double litrosAbastecer){
+    public double abastecerPorLitro(double litrosAbastecer){
         double pagarValor = litrosAbastecer * this.valorPorLitro;
         this.quantidadeDeCombustivel -= litrosAbastecer;
-        return String.format("%.2f", pagarValor);
+        return pagarValor;
     }
 
-    public String abastecerPorValor(double valorAbastecer){
+    public double abastecerPorValor(double valorAbastecer){
         double litrosPorValor = valorAbastecer / this.valorPorLitro;
         this.quantidadeDeCombustivel -= litrosPorValor;
-        double pagarValor = litrosPorValor * this.valorPorLitro;
-        return String.format("%.2f", pagarValor);
+        return litrosPorValor;
     }
 
     public String consultar(){
@@ -62,22 +61,28 @@ public class BombaCombustivel {
 
     public String alterarTipoCombustivel(char tipoDecombustivel){
         String saidaAlterarTipoCombustivel = "";
-        if(tipoDecombustivel == 'G'){
-            this.tipoCombustivel = "Gasolina";
-            saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
-                    "%s.", this.tipoCombustivel);
-        }else if(tipoDecombustivel == 'D'){
-            this.tipoCombustivel = "Diesel";
-            saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
-                    "%s.", this.tipoCombustivel);
-        }else if(tipoDecombustivel == 'A'){
-            this.tipoCombustivel = "Álcool";
-            saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
-                    "%s.", this.tipoCombustivel);
-        }else if(tipoDecombustivel == 'E'){
-            this.tipoCombustivel = "Etanol";
-            saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
-                    "%s.", this.tipoCombustivel);
+        switch(tipoDecombustivel){
+            case 'G':
+                this.tipoCombustivel = "Gasolina";
+                saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
+                        "%s.", this.tipoCombustivel);
+                break;
+            case 'D':
+                this.tipoCombustivel = "Diesel";
+                saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
+                        "%s.", this.tipoCombustivel);
+                break;
+
+            case 'A':
+                this.tipoCombustivel = "Álcool";
+                saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
+                        "%s.", this.tipoCombustivel);
+                break;
+            case 'E':
+                this.tipoCombustivel = "Etanol";
+                saidaAlterarTipoCombustivel = String.format("Tipo de Combustivel alterado para: " +
+                        "%s.", this.tipoCombustivel);
+                break;
         }
         return saidaAlterarTipoCombustivel;
     }
