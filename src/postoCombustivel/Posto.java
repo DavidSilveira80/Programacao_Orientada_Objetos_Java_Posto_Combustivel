@@ -1,8 +1,8 @@
 package postoCombustivel;
 //TODO Implementar Abastecimento
+// TODO implementar cabeçalhos e menus
 import java.util.Locale;
 import java.util.Scanner;
-
 public class Posto {
     public static void main(String[] args) {
         BombaCombustivel bombaPostoGasolina = new BombaCombustivel(0.0, 0.0, " ");
@@ -12,18 +12,16 @@ public class Posto {
         Locale.setDefault(Locale.US);
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("BEM-VINDO AO POSTO SILVEIRA");
+        CabecalhosEMenus.gerarBoasVindas();
         int parada = 1;
         while (parada == 1) {
-            System.out.println("1 - Gerar Bomba de Combustível 2 - Consultar Status das Bombas 4 - Sair");
+            CabecalhosEMenus.gerarMenuPrincipal();
             System.out.print("Informe opção: ");
             int opcao = entrada.nextInt();
             switch (opcao) {
                 case 1:
-                    System.out.println();
-                    System.out.println("GERAR BOMBA DE COMBUSTÍVEL.");
-                    System.out.print("Informe o tipo de Combustível: (G) -> GASOLINA (D) -> DIESEL (A) -> ÁLCOOL (E) -> " +
-                            "ETANOL:  ");
+                    CabecalhosEMenus.gerarCabecalhoGerarBomba();
+                    System.out.print("Informe sua escolha: ");
                     char tipoCombustivel = entrada.next().charAt(0);
                     switch(tipoCombustivel){
                         case 'G':
@@ -92,9 +90,8 @@ public class Posto {
                     break;
                 case 2:
                     System.out.println();
-                    System.out.println("CONSULTAR STATUS DAS BOMBAS");
-                    System.out.print("Informe qual Bomba quer consultar: (G) -> GASOLINA (D) -> DIESEL (A) -> ÁLCOOL (E) -> " +
-                            "ETANOL:  ");
+                    CabecalhosEMenus.gerarCabecalhoStatusDaBomba();
+                    System.out.print("Informe sua escolha: ");
                     char consultaBomba = entrada.next().charAt(0);
                     switch(consultaBomba){
                         case 'G':
