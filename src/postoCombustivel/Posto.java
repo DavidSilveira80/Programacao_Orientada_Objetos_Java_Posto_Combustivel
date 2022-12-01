@@ -26,7 +26,7 @@ public class Posto {
                     switch(tipoCombustivel){
                         case 'G':
                             System.out.println();
-                            System.out.println("GERAR BOMBA COMBUSTÍVEL GASOLINA");
+                            CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("GASOLINA");
                             System.out.print("Informe o Estoque em Litros: ");
                             double estoqueGasolina = entrada.nextDouble();
                             System.out.print("Informe o valor por Litro: R$ ");
@@ -35,13 +35,13 @@ public class Posto {
                             bombaPostoGasolina.alterarLitrosEstoque(estoqueGasolina);
                             bombaPostoGasolina.alterarValorPorLitro(valorPorLitroGasolina);
                             System.out.println();
-                            System.out.println("GERANDO BOMBA DE COMBUSTÍVEL");
+                            CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
                             System.out.println(bombaPostoGasolina.consultar());
                             System.out.println();
                             break;
                         case 'D':
                             System.out.println();
-                            System.out.println("GERAR BOMBA COMBUSTÍVEL DIESEL");
+                            CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("DIESEL");
                             System.out.print("Informe o Estoque em Litros: ");
                             double estoqueDiesel = entrada.nextDouble();
                             System.out.print("Informe o valor por Litro: R$ ");
@@ -50,13 +50,13 @@ public class Posto {
                             bombaPostoDiesel.alterarLitrosEstoque(estoqueDiesel);
                             bombaPostoDiesel.alterarValorPorLitro(valorPorLitroDiesel);
                             System.out.println();
-                            System.out.println("GERANDO BOMBA DE COMBUSTÍVEL");
+                            CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
                             System.out.println(bombaPostoDiesel.consultar());
                             System.out.println();
                             break;
                         case 'A':
                             System.out.println();
-                            System.out.println("GERAR BOMBA COMBUSTÍVEL ÁLCOOL");
+                            CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("ÁLCOOL");
                             System.out.print("Informe o Estoque em Litros: ");
                             double estoqueAlcool = entrada.nextDouble();
                             System.out.print("Informe o valor por Litro: R$ ");
@@ -65,13 +65,13 @@ public class Posto {
                             bombaPostoAlcool.alterarLitrosEstoque(estoqueAlcool);
                             bombaPostoAlcool.alterarValorPorLitro(valorPorLitroAlcool);
                             System.out.println();
-                            System.out.println("GERANDO BOMBA DE COMBUSTÍVEL");
+                            CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
                             System.out.println(bombaPostoAlcool.consultar());
                             System.out.println();
                             break;
                         case 'E':
                             System.out.println();
-                            System.out.println("GERAR BOMBA COMBUSTÍVEL ETANOL");
+                            CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("ETANOL");
                             System.out.print("Informe o Estoque em Litros: ");
                             double estoqueEtanol = entrada.nextDouble();
                             System.out.print("Informe o valor por Litro: R$ ");
@@ -80,7 +80,7 @@ public class Posto {
                             bombaPostoEtanol.alterarLitrosEstoque(estoqueEtanol);
                             bombaPostoEtanol.alterarValorPorLitro(valorPorLitroEtanol);
                             System.out.println();
-                            System.out.println("GERANDO BOMBA DE COMBUSTÍVEL");
+                            CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
                             System.out.println(bombaPostoEtanol.consultar());
                             System.out.println();
                             break;

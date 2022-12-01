@@ -59,8 +59,18 @@ public class CabecalhosEMenus {
 
     }
 
+    public static void gerarCabecalhoGerarBombaCombustivel(String tipoCombustivel){
+        System.out.println("===================================================");
+        System.out.println("   GERAR BOMBA DE COMBUSTÍVEL " + tipoCombustivel);
+        System.out.println("===================================================");
 
+    }
 
+    public static void gerarMensagemGerandoBombaDeCombustivel(){
+        System.out.println("================================");
+        System.out.println("  GERANDO BOMBA DE COMBUSTÍVEL  ");
+        System.out.println("================================");
+    }
 
 
 }
