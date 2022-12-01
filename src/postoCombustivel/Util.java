@@ -72,5 +72,16 @@ public class Util {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
+
+    //GERADOR DE BOMBAS
+
+    public static void geraBombas(BombaCombustivel combustivelBomba){
+        System.out.print("Informe o Estoque em Litros: ");
+        double estoqueCombustivel = Util.entradaDouble();
+        System.out.print("Informe o valor por Litro: R$ ");
+        double valorPorCombustivel = Util.entradaDouble();
+        combustivelBomba.alterarLitrosEstoque(estoqueCombustivel);
+        combustivelBomba.alterarValorPorLitro(valorPorCombustivel);
+    }
     
 }
