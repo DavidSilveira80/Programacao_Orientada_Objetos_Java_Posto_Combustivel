@@ -10,6 +10,7 @@ public class CabecalhosEMenus {
         System.out.println("   2 - CONSULTAR STATUS DA BOMBA    ");
         System.out.println("   4 - SAIR                         ");
         System.out.println("====================================");
+        System.out.println("Informe sua escolha: ");
     }
 
     public static void gerarMenuGerarBomba(){
@@ -21,6 +22,7 @@ public class CabecalhosEMenus {
         System.out.println("      (A) -> ÁLCOOL             ");
         System.out.println("      (E) -> ETANOL             ");
         System.out.println("================================");
+        System.out.println("Informe a sua escolha: ");
     }
 
     public static void gerarMenuStatusDaBomba(){
