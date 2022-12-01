@@ -12,7 +12,7 @@ public class Posto {
         Locale.setDefault(Locale.US);
         Scanner entrada = new Scanner(System.in);
 
-        CabecalhosEMenus.gerarBoasVindas();
+        CabecalhosEMenus.gerarCabecalhoBoasVindas();
         int parada = 1;
         while (parada == 1) {
             CabecalhosEMenus.gerarMenuPrincipal();
@@ -20,7 +20,7 @@ public class Posto {
             int opcao = entrada.nextInt();
             switch (opcao) {
                 case 1:
-                    CabecalhosEMenus.gerarCabecalhoGerarBomba();
+                    CabecalhosEMenus.gerarMenuGerarBomba();
                     System.out.print("Informe sua escolha: ");
                     char tipoCombustivel = entrada.next().charAt(0);
                     switch(tipoCombustivel){
@@ -85,49 +85,41 @@ public class Posto {
                             System.out.println();
                             break;
                         default:
-                            System.out.println("OPÇÃO INVÁLIDA. TENTE NOVAMENTE.");
+                            CabecalhosEMenus.gerarCabecalhoOpcaoInvalida();
                     }
                     break;
                 case 2:
                     System.out.println();
-                    CabecalhosEMenus.gerarCabecalhoStatusDaBomba();
+                    CabecalhosEMenus.gerarMenuStatusDaBomba();
                     System.out.print("Informe sua escolha: ");
                     char consultaBomba = entrada.next().charAt(0);
                     switch(consultaBomba){
                         case 'G':
-                            System.out.println();
-                            System.out.println("CONSULTANDO STATUS BOMBA GASOLINA");
-                            System.out.println();
+                            CabecalhosEMenus.gerarCabecalhoConsultandoStatusBomba("GASOLINA");
                             System.out.println(bombaPostoGasolina.consultar());
                             System.out.println();
                             break;
 
                         case 'D':
-                            System.out.println();
-                            System.out.println("CONSULTANDO STATUS BOMBA DIESEL");
-                            System.out.println();
+                            CabecalhosEMenus.gerarCabecalhoConsultandoStatusBomba("DIESEL");
                             System.out.println(bombaPostoDiesel.consultar());
                             System.out.println();
                             break;
 
                         case 'A':
-                            System.out.println();
-                            System.out.println("CONSULTANDO STATUS BOMBA ÁLCOOL");
-                            System.out.println();
+                            CabecalhosEMenus.gerarCabecalhoConsultandoStatusBomba("ÁLCOOL");
                             System.out.println(bombaPostoAlcool.consultar());
                             System.out.println();
                             break;
 
                         case 'E':
-                            System.out.println();
-                            System.out.println("CONSULTANDO STATUS BOMBA ETANOL");
-                            System.out.println();
+                            CabecalhosEMenus.gerarCabecalhoConsultandoStatusBomba("ETANOL");
                             System.out.println(bombaPostoEtanol.consultar());
                             System.out.println();
                             break;
 
                         default:
-                            System.out.println("OPÇÃO INVÁLIDA. TENTE NOVAMENTE.");
+                            CabecalhosEMenus.gerarCabecalhoOpcaoInvalida();
                     }
                     break;
                 case 4:
@@ -135,13 +127,8 @@ public class Posto {
                     parada = 2;
                     break;
                 default:
-                    System.out.println("OPÇÃO INVÁLIDA. TENTE NOVAMENTE.");
+                    CabecalhosEMenus.gerarCabecalhoOpcaoInvalida();
             }
         }
     }
 }
-
-
-
-
-
