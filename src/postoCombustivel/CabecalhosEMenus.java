@@ -75,6 +75,4 @@ public class CabecalhosEMenus {
         System.out.println("  GERANDO BOMBA DE COMBUSTÍVEL  ");
         System.out.println("================================");
     }
-
-
 }

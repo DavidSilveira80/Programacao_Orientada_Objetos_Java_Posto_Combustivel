@@ -13,6 +13,9 @@ public class BombaCombustivel {
         this.valorPorLitro = valorPorLitro;
         this.tipoCombustivel = tipoCombustivel;
     }
+    public BombaCombustivel(String tipoCombustivel){
+        this.tipoCombustivel = tipoCombustivel;
+    }
     //Getters e Setters
 
     public String getTipoCombustivel() {
