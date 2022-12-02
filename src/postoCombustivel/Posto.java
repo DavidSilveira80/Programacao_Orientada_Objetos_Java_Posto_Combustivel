@@ -1,6 +1,7 @@
 package postoCombustivel;
-//TODO Implementar Abastecimento
-// TODO implementar cabeçalhos e menus
+//TODO continuar com a desacoplagem de responsabilidades
+//TODO armazenar bombas em uma lista
+
 import java.util.Locale;
 public class Posto {
     
