@@ -10,7 +10,7 @@ public class CabecalhosEMenus {
         System.out.println("   2 - CONSULTAR STATUS DA BOMBA    ");
         System.out.println("   4 - SAIR                         ");
         System.out.println("====================================");
-        System.out.println("Informe sua escolha: ");
+        System.out.print("Informe sua escolha: ");
     }
 
     public static void gerarMenuGerarBomba(){
@@ -22,7 +22,7 @@ public class CabecalhosEMenus {
         System.out.println("      (A) -> ÁLCOOL             ");
         System.out.println("      (E) -> ETANOL             ");
         System.out.println("================================");
-        System.out.println("Informe a sua escolha: ");
+        System.out.print("Informe a sua escolha: ");
     }
 
     public static void gerarMenuStatusDaBomba(){
@@ -34,7 +34,7 @@ public class CabecalhosEMenus {
         System.out.println("   (A) -> BOMBA DE ÁLCOOL       ");
         System.out.println("   (E) -> BOMBA DE ETANOL       ");
         System.out.println("================================");
-        System.out.println("Informe a sua escolha: ");
+        System.out.print("Informe a sua escolha: ");
     }
 
     //CABEÇALHOS
@@ -53,6 +53,7 @@ public class CabecalhosEMenus {
         System.out.println("     OPÇÃO INVÁLIDA      ");
         System.out.println("     TENTE NOVAMENTE     ");
         System.out.println("=========================");
+        System.out.print("Informe a sua escolha: ");
     }
 
     public static void gerarCabecalhoConsultandoStatusBomba(String tipoBomba){
