@@ -34,6 +34,7 @@ public class CabecalhosEMenus {
         System.out.println("   (A) -> BOMBA DE ÁLCOOL       ");
         System.out.println("   (E) -> BOMBA DE ETANOL       ");
         System.out.println("================================");
+        System.out.println("Informe a sua escolha: ");
     }
 
     //CABEÇALHOS

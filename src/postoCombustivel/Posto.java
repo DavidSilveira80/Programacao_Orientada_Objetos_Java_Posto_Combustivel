@@ -9,98 +9,72 @@ public class Posto {
         BombaCombustivel bombaPostoDiesel =  new BombaCombustivel(0.0, 0.0, " ");
         BombaCombustivel bombaPostoAlcool =  new BombaCombustivel(0.0, 0.0, " ");
         BombaCombustivel bombaPostoEtanol =  new BombaCombustivel(0.0, 0.0, " ");
-        CabecalhosEMenus cabecalhosMenus = new CabecalhosEMenus();
         Locale.setDefault(Locale.US);
         
-        cabecalhosMenus.gerarCabecalhoBoasVindas();
+        CabecalhosEMenus.gerarCabecalhoBoasVindas();
         int parada = 1;
         while (parada == 1) {
-            cabecalhosMenus.gerarMenuPrincipal();
-            
+            CabecalhosEMenus.gerarMenuPrincipal();
             switch (Util.fluxoMenuPrincipal()) {
                 case 1:
                     Util.clearTerminal();
-                    cabecalhosMenus.gerarMenuGerarBomba(); 
-                    
+                    CabecalhosEMenus.gerarMenuGerarBomba();
                     switch( Util.fluxoMenuGeraBomba()){
                         case 'G':
                             Util.clearTerminal();
                             System.out.flush();
-                            System.out.println();
-                            cabecalhosMenus.gerarCabecalhoGerarBombaCombustivel("GASOLINA");
+                            CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("GASOLINA");
                             Util.geraBombas(bombaPostoGasolina);
-                            System.out.println();
-                            cabecalhosMenus.gerarMensagemGerandoBombaDeCombustivel();
+                            CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
                             Util.clearTerminal();
                             break;
                         case 'D':
                             Util.clearTerminal();
-                            System.out.println();
-                            cabecalhosMenus.gerarCabecalhoGerarBombaCombustivel("DIESEL");
+                            CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("DIESEL");
                             Util.geraBombas(bombaPostoDiesel);
-                            System.out.println();
-                            cabecalhosMenus.gerarMensagemGerandoBombaDeCombustivel();
+                            CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
                             Util.clearTerminal();
                             break;
                         case 'A':
                             Util.clearTerminal();
-                            System.out.println();
-                            cabecalhosMenus.gerarCabecalhoGerarBombaCombustivel("ÁLCOOL");
+                            CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("ÁLCOOL");
                             Util.geraBombas(bombaPostoAlcool);
-                            System.out.println();
-                            cabecalhosMenus.gerarMensagemGerandoBombaDeCombustivel();
+                            CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
                             Util.clearTerminal();
                             break;
                         case 'E':
                             Util.clearTerminal();
-                            System.out.println();
-                            cabecalhosMenus.gerarCabecalhoGerarBombaCombustivel("ETANOL");
+                            CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("ETANOL");
                             Util.geraBombas(bombaPostoEtanol);
-                            System.out.println();
-                            cabecalhosMenus.gerarMensagemGerandoBombaDeCombustivel();
+                            CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
                             Util.clearTerminal();
                             break;
                         default:
-                            cabecalhosMenus.gerarCabecalhoOpcaoInvalida();
+                            CabecalhosEMenus.gerarCabecalhoOpcaoInvalida();
                     }
                     break;
                 case 2:
                     Util.clearTerminal();
-                    System.out.println();
-                    cabecalhosMenus.gerarMenuStatusDaBomba();
-                    System.out.print("Informe sua escolha: ");
-                    char consultaBomba = Util.entradaChar();
-                    switch(consultaBomba){
+                    CabecalhosEMenus.gerarMenuStatusDaBomba();
+                    switch(Util.fluxoMenuStatusBomba()){
                         case 'G':
                             Util.clearTerminal();
-                            cabecalhosMenus.gerarCabecalhoConsultandoStatusBomba("GASOLINA");
-                            System.out.println(bombaPostoGasolina.consultar());
-                            System.out.println();
+                            Util.geraStatusDaBomba(bombaPostoGasolina, "GASOLINA");
                             break;
-
                         case 'D':
                             Util.clearTerminal();
-                            cabecalhosMenus.gerarCabecalhoConsultandoStatusBomba("DIESEL");
-                            System.out.println(bombaPostoDiesel.consultar());
-                            System.out.println();
+                            Util.geraStatusDaBomba(bombaPostoDiesel, "DIESEL");
                             break;
-
                         case 'A':
                             Util.clearTerminal();
-                            cabecalhosMenus.gerarCabecalhoConsultandoStatusBomba("ÁLCOOL");
-                            System.out.println(bombaPostoAlcool.consultar());
-                            System.out.println();
+                            Util.geraStatusDaBomba(bombaPostoAlcool, "ÁLCOOL");
                             break;
-
                         case 'E':
                             Util.clearTerminal();
-                            cabecalhosMenus.gerarCabecalhoConsultandoStatusBomba("ETANOL");
-                            System.out.println(bombaPostoEtanol.consultar());
-                            System.out.println();
+                            Util.geraStatusDaBomba(bombaPostoEtanol, "ETANOL");
                             break;
-
                         default:
-                            cabecalhosMenus.gerarCabecalhoOpcaoInvalida();
+                            CabecalhosEMenus.gerarCabecalhoOpcaoInvalida();
                     }
                     break;
                 case 4:
@@ -109,7 +83,8 @@ public class Posto {
                     parada = 2;
                     break;
                 default:
-                    cabecalhosMenus.gerarCabecalhoOpcaoInvalida();
+                    Util.clearTerminal();
+                    CabecalhosEMenus.gerarCabecalhoOpcaoInvalida();
             }
         }
     }

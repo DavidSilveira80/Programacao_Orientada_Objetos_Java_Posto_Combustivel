@@ -6,15 +6,15 @@ public class Util {
 
     //ENTRADAS
 
-    public static int entradaInteira(){
+    public static int entradaInteira() {
         Scanner entrada = new Scanner(System.in);
         boolean continuarLeitura = true;
         int numero = 0;
-        while(continuarLeitura){
-            try{
+        while (continuarLeitura) {
+            try {
                 numero = Integer.parseInt(entrada.nextLine());
                 continuarLeitura = false;
-            }catch(NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.out.println("Entrada com valor inválido. Tente Novamente.");
             }
         }
@@ -22,49 +22,59 @@ public class Util {
 
     }
 
-    public static char entradaChar(){
+    public static char entradaChar() {
         Scanner entrada = new Scanner(System.in);
         char caractere = entrada.next().charAt(0);
         return caractere;
     }
 
-    public static double entradaDouble(){
+    public static double entradaDouble() {
         Scanner entrada = new Scanner(System.in);
         boolean continuarLeitura = true;
         double entraDouble = 0.0;
-        while(continuarLeitura){
-            try{
+        while (continuarLeitura) {
+            try {
                 entraDouble = Double.parseDouble(entrada.nextLine());
                 continuarLeitura = false;
-            }catch(NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.out.println("Entrada com valor inválido. Tente Novamente.");
             }
         }
         return entraDouble;
     }
-    
+
 
     //FLUXOS MENUS
 
-    public static int fluxoMenuPrincipal(){
+    public static int fluxoMenuPrincipal() {
         int numero;
         numero = entradaInteira();
-        while(numero != 1 && numero != 2 && numero != 4){
+        while (numero != 1 && numero != 2 && numero != 4) {
             CabecalhosEMenus.gerarMenuPrincipal();
             numero = entradaInteira();
         }
         return numero;
     }
 
-    public static char fluxoMenuGeraBomba(){
+    public static char fluxoMenuGeraBomba() {
         char caractere;
         caractere = entradaChar();
-        while(caractere != 'G' && caractere != 'D' && caractere != 'A' && caractere != 'E'){
+        while (caractere != 'G' && caractere != 'D' && caractere != 'A' && caractere != 'E') {
             CabecalhosEMenus.gerarMenuGerarBomba();
             caractere = entradaChar();
         }
         return caractere;
 
+    }
+
+    public static char fluxoMenuStatusBomba(){
+        char caractere;
+        caractere = entradaChar();
+        while (caractere != 'G' && caractere != 'D' && caractere != 'A' && caractere != 'E') {
+            CabecalhosEMenus.gerarMenuStatusDaBomba();
+            caractere = entradaChar();
+        }
+        return caractere;
     }
 
     public static void clearTerminal() {
@@ -75,7 +85,7 @@ public class Util {
 
     //GERADOR DE BOMBAS
 
-    public static void geraBombas(BombaCombustivel combustivelBomba){
+    public static void geraBombas(BombaCombustivel combustivelBomba) {
         System.out.print("Informe o Estoque em Litros: ");
         double estoqueCombustivel = Util.entradaDouble();
         System.out.print("Informe o valor por Litro: R$ ");
@@ -83,5 +93,14 @@ public class Util {
         combustivelBomba.alterarLitrosEstoque(estoqueCombustivel);
         combustivelBomba.alterarValorPorLitro(valorPorCombustivel);
     }
-    
+
+    public static void geraStatusDaBomba(BombaCombustivel combustivelBomba, String combustivel){
+        CabecalhosEMenus.gerarCabecalhoConsultandoStatusBomba(combustivel);
+        System.out.println(combustivelBomba.consultar());
+    }
 }
+
+
+
+    
+
