@@ -1,6 +1,6 @@
 package postoCombustivel;
 
-public class CabecalhosEMenus {
+public class Telas {
 
     //MENUS
 

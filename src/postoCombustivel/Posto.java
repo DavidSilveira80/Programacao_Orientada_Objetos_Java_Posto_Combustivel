@@ -20,19 +20,19 @@ public class Posto {
         arrayBombasCombustivel[3] = bombaPostoEtanol;
         Locale.setDefault(Locale.US);
         
-        CabecalhosEMenus.gerarCabecalhoBoasVindas();
+        Telas.gerarCabecalhoBoasVindas();
         int parada = 1;
         while (parada == 1) {
-            CabecalhosEMenus.gerarMenuPrincipal();
+            Telas.gerarMenuPrincipal();
             switch (MetodosAuxiliares.fluxoMenuPrincipal()) {
                 case 1:
                     MetodosAuxiliares.clearTerminal();
-                    CabecalhosEMenus.gerarMenuGerarBomba();
+                    Telas.gerarMenuGerarBomba();
                     MetodosAuxiliares.geraMenuGeraBombas(arrayBombasCombustivel);
                     break;
                 case 2:
                     MetodosAuxiliares.clearTerminal();
-                    CabecalhosEMenus.gerarMenuStatusDaBomba();
+                    Telas.gerarMenuStatusDaBomba();
                     MetodosAuxiliares.geraMenuStatusBomba(arrayBombasCombustivel);
                     break;
                 case 4:
@@ -42,7 +42,7 @@ public class Posto {
                     break;
                 default:
                     MetodosAuxiliares.clearTerminal();
-                    CabecalhosEMenus.gerarCabecalhoOpcaoInvalida();
+                    Telas.gerarCabecalhoOpcaoInvalida();
             }
         }
     }

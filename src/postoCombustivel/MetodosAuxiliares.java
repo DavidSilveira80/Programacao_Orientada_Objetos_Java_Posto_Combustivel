@@ -9,7 +9,7 @@ public class MetodosAuxiliares {
         int numero;
         numero = entradaInteira();
         while (numero != 1 && numero != 2 && numero != 4) {
-            CabecalhosEMenus.gerarMenuPrincipal();
+            Telas.gerarMenuPrincipal();
             numero = entradaInteira();
         }
         return numero;
@@ -19,7 +19,7 @@ public class MetodosAuxiliares {
         char caractere;
         caractere = entradaChar();
         while (caractere != 'G' && caractere != 'D' && caractere != 'A' && caractere != 'E') {
-            CabecalhosEMenus.gerarMenuGerarBomba();
+            Telas.gerarMenuGerarBomba();
             caractere = entradaChar();
         }
         return caractere;
@@ -30,7 +30,7 @@ public class MetodosAuxiliares {
         char caractere;
         caractere = entradaChar();
         while (caractere != 'G' && caractere != 'D' && caractere != 'A' && caractere != 'E') {
-            CabecalhosEMenus.gerarMenuStatusDaBomba();
+            Telas.gerarMenuStatusDaBomba();
             caractere = entradaChar();
         }
         return caractere;
@@ -56,7 +56,7 @@ public class MetodosAuxiliares {
     // Status Bomba
 
     public static void geraStatusDaBomba(BombaCombustivel combustivelBomba, String combustivel){
-        CabecalhosEMenus.gerarCabecalhoConsultandoStatusBomba(combustivel);
+        Telas.gerarCabecalhoConsultandoStatusBomba(combustivel);
         System.out.println(combustivelBomba.consultar());
     }
 
@@ -65,34 +65,34 @@ public class MetodosAuxiliares {
             case 'G':
                 clearTerminal();
                 System.out.flush();
-                CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("GASOLINA");
+                Telas.gerarCabecalhoGerarBombaCombustivel("GASOLINA");
                 geraBombas(arrayBombas[0]);
-                CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
+                Telas.gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
             case 'D':
                 clearTerminal();
-                CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("DIESEL");
+                Telas.gerarCabecalhoGerarBombaCombustivel("DIESEL");
                 geraBombas(arrayBombas[1]);
-                CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
+                Telas.gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
             case 'A':
                 clearTerminal();
-                CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("ÁLCOOL");
+                Telas.gerarCabecalhoGerarBombaCombustivel("ÁLCOOL");
                 geraBombas(arrayBombas[2]);
-                CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
+                Telas.gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
             case 'E':
                 clearTerminal();
-                CabecalhosEMenus.gerarCabecalhoGerarBombaCombustivel("ETANOL");
+                Telas.gerarCabecalhoGerarBombaCombustivel("ETANOL");
                 geraBombas(arrayBombas[3]);
-                CabecalhosEMenus.gerarMensagemGerandoBombaDeCombustivel();
+                Telas.gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
             default:
-                CabecalhosEMenus.gerarCabecalhoOpcaoInvalida();
+                Telas.gerarCabecalhoOpcaoInvalida();
         }
 
     }
@@ -115,7 +115,7 @@ public class MetodosAuxiliares {
                 geraStatusDaBomba(arrayBombas[3], "ETANOL");
                 break;
             default:
-                CabecalhosEMenus.gerarCabecalhoOpcaoInvalida();
+                Telas.gerarCabecalhoOpcaoInvalida();
         }
     }
 }
