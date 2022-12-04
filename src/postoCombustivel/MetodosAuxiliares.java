@@ -1,5 +1,8 @@
 package postoCombustivel;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import static postoCombustivel.Utilidades.*;
 
 public class MetodosAuxiliares {
@@ -44,50 +47,45 @@ public class MetodosAuxiliares {
 
     //GERADOR DE BOMBAS
 
-    public static void geraBombas(BombaCombustivel combustivelBomba) {
-        System.out.print("Informe o Estoque em Litros: ");
-        double estoqueCombustivel = Utilidades.entradaDouble();
-        System.out.print("Informe o valor por Litro: R$ ");
-        double valorPorCombustivel = Utilidades.entradaDouble();
-        combustivelBomba.alterarLitrosEstoque(estoqueCombustivel);
-        combustivelBomba.alterarValorPorLitro(valorPorCombustivel);
-
+    public static void criaBombas(ArrayList<BombaCombustivel> arrayCombustivelBomba, String tipoCombustivel) {
+        if(existeBombaCombustivel(arrayCombustivelBomba, tipoCombustivel) == false) {
+            System.out.print("Informe o Estoque em Litros: ");
+            double estoqueCombustivel = Utilidades.entradaDouble();
+            System.out.print("Informe o valor por Litro: R$ ");
+            double valorPorCombustivel = Utilidades.entradaDouble();
+            arrayCombustivelBomba.add(new BombaCombustivel(tipoCombustivel, valorPorCombustivel, estoqueCombustivel));
+        }else{
+            System.out.println("Bomba de combustível tipo " + tipoCombustivel + "já existe.");
+        }
     }
-    // Status Bomba
-
-    public static void geraStatusDaBomba(BombaCombustivel combustivelBomba, String combustivel){
-        Telas.gerarCabecalhoConsultandoStatusBomba(combustivel);
-        System.out.println(combustivelBomba.consultar());
-    }
-
-    public static void geraMenuGeraBombas(BombaCombustivel... arrayBombas){
+    public static void geraMenuCriaBombas(ArrayList<BombaCombustivel> arrayBombas){
         switch(fluxoMenuGeraBomba()){
             case 'G':
                 clearTerminal();
                 System.out.flush();
                 Telas.gerarCabecalhoGerarBombaCombustivel("GASOLINA");
-                geraBombas(arrayBombas[0]);
+                criaBombas(arrayBombas, "GASOLINA");
                 Telas.gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
             case 'D':
                 clearTerminal();
                 Telas.gerarCabecalhoGerarBombaCombustivel("DIESEL");
-                geraBombas(arrayBombas[1]);
+                criaBombas(arrayBombas, "DIESEL");
                 Telas.gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
             case 'A':
                 clearTerminal();
                 Telas.gerarCabecalhoGerarBombaCombustivel("ÁLCOOL");
-                geraBombas(arrayBombas[2]);
+                criaBombas(arrayBombas, "ÁLCOOL");
                 Telas.gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
             case 'E':
                 clearTerminal();
                 Telas.gerarCabecalhoGerarBombaCombustivel("ETANOL");
-                geraBombas(arrayBombas[3]);
+                criaBombas(arrayBombas, "ETANOL");
                 Telas.gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
@@ -96,26 +94,64 @@ public class MetodosAuxiliares {
         }
 
     }
-    public static void geraMenuStatusBomba(BombaCombustivel... arrayBombas){
-        switch(fluxoMenuStatusBomba()){
+    // Status Bomba
+
+    public static void geraMenuStatusBomba(ArrayList<BombaCombustivel> arrayBombas){
+        switch(fluxoMenuStatusBomba()) {
             case 'G':
                 clearTerminal();
-                geraStatusDaBomba(arrayBombas[0], "GASOLINA");
+                System.out.flush();
+                System.out.println(consultaBomba(arrayBombas, "GASOLINA"));
+                clearTerminal();
                 break;
             case 'D':
                 clearTerminal();
-                geraStatusDaBomba(arrayBombas[1], "DIESEL");
+                System.out.println(consultaBomba(arrayBombas, "DIESEL"));
+                clearTerminal();
                 break;
             case 'A':
                 clearTerminal();
-                geraStatusDaBomba(arrayBombas[2], "ÁLCOOL");
+                System.out.println(consultaBomba(arrayBombas, "ÁLCOOL"));
+                clearTerminal();
                 break;
             case 'E':
                 clearTerminal();
-                geraStatusDaBomba(arrayBombas[3], "ETANOL");
+                System.out.println(consultaBomba(arrayBombas, "ETANOL"));
+                clearTerminal();
                 break;
             default:
                 Telas.gerarCabecalhoOpcaoInvalida();
         }
+
+
+}
+    public static boolean existeBombaCombustivel(ArrayList<BombaCombustivel> arrayBombas, String tipoDeBomba){
+        boolean resposta = false;
+
+        for(BombaCombustivel bomba : arrayBombas){
+            if(bomba.getTipoCombustivel().equals(tipoDeBomba)){
+                resposta = true;
+            }else{
+                resposta = false;
+            }
+        }
+        return resposta;
     }
+
+    public static String consultaBomba(ArrayList<BombaCombustivel> arrayDebombas, String tipoDeBomba){
+        String resp = "";
+        if(existeBombaCombustivel(arrayDebombas, tipoDeBomba) == true){
+            int index = 600;
+            for(BombaCombustivel bombaPosto : arrayDebombas){
+                if(bombaPosto.getTipoCombustivel().equals(tipoDeBomba)){
+                    resp = bombaPosto.consultar();
+                }
+            }
+
+        }else{
+            resp = "Tipo de Bomba inexistente";
+        }
+        return resp;
+    }
+
 }

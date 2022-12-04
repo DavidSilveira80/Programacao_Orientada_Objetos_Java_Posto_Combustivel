@@ -8,13 +8,10 @@ public class BombaCombustivel {
     private double quantidadeDeCombustivel;
 
     //Construtor
-    public BombaCombustivel(double quantidadeDeCombustivel, double valorPorLitro, String tipoCombustivel){
-        this.quantidadeDeCombustivel = quantidadeDeCombustivel;
+    public BombaCombustivel(String tipoCombustivel, double valorPorLitro, double quantidadeDeCombustivel){
+        this.tipoCombustivel = tipoCombustivel;
         this.valorPorLitro = valorPorLitro;
-        this.tipoCombustivel = tipoCombustivel;
-    }
-    public BombaCombustivel(String tipoCombustivel){
-        this.tipoCombustivel = tipoCombustivel;
+        this.quantidadeDeCombustivel = quantidadeDeCombustivel;
     }
     //Getters e Setters
 
