@@ -64,6 +64,5 @@ public class CriaBombas {
             default:
                 Telas.gerarCabecalhoOpcaoInvalida();
         }
-
     }
 }

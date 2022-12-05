@@ -24,7 +24,7 @@ public class Utilidades {
 
     public static char entradaChar() {
         Scanner entrada = new Scanner(System.in);
-        char caractere = entrada.next().charAt(0);
+        char caractere = entrada.next().toUpperCase().charAt(0);
         return caractere;
     }
 
