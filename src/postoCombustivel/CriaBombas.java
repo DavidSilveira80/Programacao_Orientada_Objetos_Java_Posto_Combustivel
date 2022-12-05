@@ -2,8 +2,8 @@ package postoCombustivel;
 
 import java.util.ArrayList;
 
-import static postoCombustivel.MetodosAuxiliares.*;
-import static postoCombustivel.Utilidades.entradaChar;
+import static postoCombustivel.MetodosDePesquisaEBusca.*;
+import static postoCombustivel.Utilidades.*;
 
 public class CriaBombas {
     //GERADOR DE BOMBAS

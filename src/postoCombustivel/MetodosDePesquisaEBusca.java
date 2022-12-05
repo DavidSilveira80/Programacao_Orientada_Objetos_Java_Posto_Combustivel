@@ -2,13 +2,7 @@ package postoCombustivel;
 
 import java.util.ArrayList;
 
-public class MetodosAuxiliares {
-
-    public static void clearTerminal() {
-
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
+public class MetodosDePesquisaEBusca {
 
     public static boolean existeBombaCombustivel(ArrayList<BombaCombustivel> arrayBombas, String tipoDeBomba){
         boolean resposta = false;

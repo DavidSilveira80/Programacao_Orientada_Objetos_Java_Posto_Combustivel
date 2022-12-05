@@ -2,8 +2,8 @@ package postoCombustivel;
 
 import java.util.ArrayList;
 
-import static postoCombustivel.MetodosAuxiliares.clearTerminal;
-import static postoCombustivel.MetodosAuxiliares.consultaBomba;
+import static postoCombustivel.Utilidades.clearTerminal;
+import static postoCombustivel.MetodosDePesquisaEBusca.consultaBomba;
 import static postoCombustivel.Utilidades.entradaChar;
 
 public class StatusBomba {

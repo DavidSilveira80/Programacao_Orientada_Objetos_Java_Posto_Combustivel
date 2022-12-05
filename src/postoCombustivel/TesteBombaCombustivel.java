@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import java.util.Locale;
 import java.util.ArrayList;
 
-import static postoCombustivel.MetodosAuxiliares.existeBombaCombustivel;
+import static postoCombustivel.MetodosDePesquisaEBusca.existeBombaCombustivel;
 
 public class TesteBombaCombustivel {
     @Test

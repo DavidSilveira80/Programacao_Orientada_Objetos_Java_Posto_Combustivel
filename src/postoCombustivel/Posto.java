@@ -30,22 +30,22 @@ public class Posto {
             Telas.gerarMenuPrincipal();
             switch (fluxoMenuPrincipal()) {
                 case 1:
-                    MetodosAuxiliares.clearTerminal();
+                    Utilidades.clearTerminal();
                     Telas.gerarMenuGerarBomba();
                     CriaBombas.geraMenuCriaBombas(arrayBombasCombustivel);
                     break;
                 case 2:
-                    MetodosAuxiliares.clearTerminal();
+                    Utilidades.clearTerminal();
                    Telas.gerarMenuStatusDaBomba();
                   StatusBomba.geraMenuStatusBomba(arrayBombasCombustivel);
                   break;
                 case 4:
-                    MetodosAuxiliares.clearTerminal();
+                    Utilidades.clearTerminal();
                     System.out.println("ENCERRANDO. VOLTE SEMPRE.");
                     parada = 2;
                     break;
                 default:
-                    MetodosAuxiliares.clearTerminal();
+                    Utilidades.clearTerminal();
                     Telas.gerarCabecalhoOpcaoInvalida();
             }
         }
