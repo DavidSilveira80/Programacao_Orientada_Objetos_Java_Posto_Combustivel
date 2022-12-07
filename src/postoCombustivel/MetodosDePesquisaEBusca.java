@@ -17,11 +17,11 @@ public class MetodosDePesquisaEBusca {
         return resposta;
     }
 
-    public static String consultaBomba(ArrayList<BombaCombustivel> arrayDebombas, String tipoDeBomba){
+    public static String consultaBomba(ArrayList<BombaCombustivel> arrayDeBombas, String tipoDeBomba){
         String resp = "";
-        if(existeBombaCombustivel(arrayDebombas, tipoDeBomba) == true){
+        if(existeBombaCombustivel(arrayDeBombas, tipoDeBomba) == true){
             int index = 600;
-            for(BombaCombustivel bombaPosto : arrayDebombas){
+            for(BombaCombustivel bombaPosto : arrayDeBombas){
                 if(bombaPosto.getTipoCombustivel().equals(tipoDeBomba)){
                     resp = bombaPosto.consultar();
                 }
