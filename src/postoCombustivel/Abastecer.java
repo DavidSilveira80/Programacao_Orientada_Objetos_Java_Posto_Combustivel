@@ -2,7 +2,7 @@ package postoCombustivel;
 
 import java.util.ArrayList;
 
-import static postoCombustivel.MetodosDePesquisaEBusca.consultaBomba;
+
 import static postoCombustivel.Utilidades.clearTerminal;
 import static postoCombustivel.Utilidades.entradaChar;
 
@@ -17,12 +17,12 @@ public class Abastecer {
         return caractere;
     }
 
-    public static void geraMenuStatusBomba(ArrayList<BombaCombustivel> arrayBombas){
+    public static void geraMenuAbastecer(ArrayList<BombaCombustivel> arrayBombas){
         switch(fluxoMenuAbastecer()) {
             case 'G':
-                clearTerminal();
 
-                clearTerminal();
+
+
                 break;
             case 'D':
                 clearTerminal();

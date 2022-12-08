@@ -13,7 +13,7 @@ public class Posto {
     public static int fluxoMenuPrincipal() {
         int numero;
         numero = entradaInteira();
-        while (numero != 1 && numero != 2 && numero != 4) {
+        while (numero != 1 && numero != 2 && numero != 3 && numero != 4) {
             Telas.gerarMenuPrincipal();
             numero = entradaInteira();
         }
@@ -41,8 +41,8 @@ public class Posto {
                   break;
                 case 3:
                     Utilidades.clearTerminal();
-                    Abastecer.geraMenuStatusBomba(arrayBombasCombustivel);
-
+                    Telas.gerarMenuAbastecerTipoCombustivel();
+                    Abastecer.geraMenuAbastecer(arrayBombasCombustivel);
                     break;
                 case 4:
                     Utilidades.clearTerminal();

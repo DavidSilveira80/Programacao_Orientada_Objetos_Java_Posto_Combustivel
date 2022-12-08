@@ -1,5 +1,17 @@
 package postoCombustivel;
 
+import static postoCombustivel.Utilidades.entradaChar;
+
 public class TipoAbastecimento {
+    public static char fluxoMenuTipoAbastecimento(){
+        char caractere;
+        caractere = entradaChar();
+        while (caractere != 'V' && caractere != 'L') {
+            Telas.gerarMenuStatusDaBomba();
+            caractere = entradaChar();
+        }
+        return caractere;
+    }
+
 
 }
