@@ -10,7 +10,7 @@ public class Telas {
         System.out.println("           ABASTECER           ");
         System.out.println("    (L) ABASTECER POR LITRO    ");
         System.out.println("    (V) ABASTECER POR VALOR    ");
-        System.out.print("Informe a sua escolha:           ");
+        System.out.print("Informe a sua escolha: ");
     }
 
     public static void gerarMenuPrincipal(){
