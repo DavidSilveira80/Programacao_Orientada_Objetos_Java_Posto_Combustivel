@@ -20,7 +20,7 @@ public class MetodosDePesquisaEBusca {
     public static String consultaBomba(ArrayList<BombaCombustivel> arrayDeBombas, String tipoDeBomba){
         String resp = "";
         if(existeBombaCombustivel(arrayDeBombas, tipoDeBomba) == true){
-            int index = 600;
+
             for(BombaCombustivel bombaPosto : arrayDeBombas){
                 if(bombaPosto.getTipoCombustivel().equals(tipoDeBomba)){
                     resp = bombaPosto.consultar();
@@ -29,6 +29,20 @@ public class MetodosDePesquisaEBusca {
 
         }else{
             resp = "Tipo de Bomba inexistente";
+        }
+        return resp;
+    }
+    public static BombaCombustivel retornaBomba(ArrayList<BombaCombustivel> arrayDeBombas, String tipoDeBomba){
+        BombaCombustivel resp = null ;
+        if(existeBombaCombustivel(arrayDeBombas, tipoDeBomba) == true){
+            for(BombaCombustivel bombaPosto : arrayDeBombas){
+                if(bombaPosto.getTipoCombustivel().equals(tipoDeBomba)){
+                    resp = bombaPosto;
+                }
+            }
+
+        }else{
+            resp = null;
         }
         return resp;
     }

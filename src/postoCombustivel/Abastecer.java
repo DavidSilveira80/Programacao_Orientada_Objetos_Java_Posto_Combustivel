@@ -20,9 +20,10 @@ public class Abastecer {
     public static void geraMenuAbastecer(ArrayList<BombaCombustivel> arrayBombas){
         switch(fluxoMenuAbastecer()) {
             case 'G':
-
-
-
+                System.out.println("ABASTECENDO GASOLINA");
+                BombaCombustivel bombaGasolina = MetodosDePesquisaEBusca.retornaBomba(arrayBombas,
+                        "GASOLINA");
+                TipoAbastecimento.geraMenuTipoAbastecimento(bombaGasolina);
                 break;
             case 'D':
                 clearTerminal();

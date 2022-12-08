@@ -1,7 +1,5 @@
 package postoCombustivel;
-//TODO implementar abaster
-//TODO implementar Abastecer por Valor
-//TODO implementar Abastecer por Litro
+//TODO refatorar métodos de abastecimento
 
 import java.util.ArrayList;
 import java.util.Locale;
