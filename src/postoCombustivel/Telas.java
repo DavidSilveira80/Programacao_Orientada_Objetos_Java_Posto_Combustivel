@@ -4,6 +4,15 @@ public class Telas {
 
     //MENUS
 
+
+    public static void gerarTelaTipoDeAbastecimento(){
+        System.out.println("===============================");
+        System.out.println("           ABASTECER           ");
+        System.out.println("    (L) ABASTECER POR LITRO    ");
+        System.out.println("    (V) ABASTECER POR VALOR    ");
+        System.out.print("Informe a sua escolha:           ");
+    }
+
     public static void gerarMenuPrincipal(){
         System.out.println("====================================");
         System.out.println("   1 - GERAR BOMBA DE COMBUSTÍVEL   ");
@@ -37,6 +46,20 @@ public class Telas {
         System.out.println("================================");
         System.out.print("Informe a sua escolha: ");
     }
+
+    public static void gerarMenuAbastecerTipoCombustivel(){
+        System.out.println("================================");
+        System.out.println("             ABASTECER          ");
+        System.out.println("================================");
+        System.out.println("   (G) -> BOMBA DE GASOLINA     ");
+        System.out.println("   (D) -> BOMBA DE DIESEL       ");
+        System.out.println("   (A) -> BOMBA DE ÁLCOOL       ");
+        System.out.println("   (E) -> BOMBA DE ETANOL       ");
+        System.out.println("================================");
+        System.out.print("Informe a sua escolha: ");
+    }
+
+
 
     //CABEÇALHOS
 
@@ -77,11 +100,5 @@ public class Telas {
         System.out.println("================================");
     }
 
-    public static void gerarTelaTipoDeAbastecimento(){
-        System.out.println("===============================");
-        System.out.println("           ABASTECER           ");
-        System.out.println("    (L) ABASTECER POR LITRO    ");
-        System.out.println("    (V) ABASTECER POR VALOR    ");
-        System.out.print("Informe a sua escolha:           ");
-    }
+
 }

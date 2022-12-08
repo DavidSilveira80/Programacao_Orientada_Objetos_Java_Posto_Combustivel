@@ -1,5 +1,9 @@
 package postoCombustivel;
 
+import java.util.ArrayList;
+
+import static postoCombustivel.MetodosDePesquisaEBusca.consultaBomba;
+import static postoCombustivel.Utilidades.clearTerminal;
 import static postoCombustivel.Utilidades.entradaChar;
 
 public class Abastecer {
@@ -7,9 +11,37 @@ public class Abastecer {
         char caractere;
         caractere = entradaChar();
         while (caractere != 'G' && caractere != 'D' && caractere != 'A' && caractere != 'E') {
-            Telas.gerarMenuStatusDaBomba();
+            Telas.gerarMenuAbastecerTipoCombustivel();
             caractere = entradaChar();
         }
         return caractere;
+    }
+
+    public static void geraMenuStatusBomba(ArrayList<BombaCombustivel> arrayBombas){
+        switch(fluxoMenuAbastecer()) {
+            case 'G':
+                clearTerminal();
+
+                clearTerminal();
+                break;
+            case 'D':
+                clearTerminal();
+
+                clearTerminal();
+                break;
+            case 'A':
+                clearTerminal();
+
+                clearTerminal();
+                break;
+            case 'E':
+                clearTerminal();
+
+                clearTerminal();
+                break;
+            default:
+                Telas.gerarCabecalhoOpcaoInvalida();
+        }
+
     }
 }

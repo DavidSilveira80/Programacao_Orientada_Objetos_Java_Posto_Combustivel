@@ -41,7 +41,8 @@ public class Posto {
                   break;
                 case 3:
                     Utilidades.clearTerminal();
-                    Telas.gerarTelaTipoDeAbastecimento();
+                    Abastecer.geraMenuStatusBomba(arrayBombasCombustivel);
+
                     break;
                 case 4:
                     Utilidades.clearTerminal();
