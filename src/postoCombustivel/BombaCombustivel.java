@@ -40,7 +40,7 @@ public class BombaCombustivel {
     }
 
     //Métodos
-    public double abastecerPorLitro(double litrosAbastecer){
+    public double  abastecerPorLitro(double litrosAbastecer){
         double pagarValor = litrosAbastecer * this.valorPorLitro;
         this.quantidadeDeCombustivel -= litrosAbastecer;
         return pagarValor;
@@ -98,4 +98,5 @@ public class BombaCombustivel {
         this.quantidadeDeCombustivel = novoEstoqueLitro;
         return String.format("Litros em Estoque alterado para: %.3f.", this.quantidadeDeCombustivel);
     }
+
 }
