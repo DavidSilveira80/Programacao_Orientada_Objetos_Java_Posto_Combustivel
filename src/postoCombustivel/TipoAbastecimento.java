@@ -13,5 +13,16 @@ public class TipoAbastecimento {
         return caractere;
     }
 
+    public static void geraMenuTipoAbastecimento(){
+        switch(fluxoMenuTipoAbastecimento()){
+            case 'L':
+                break;
+            case 'V':
+                break;
+            default:
+                Telas.gerarCabecalhoOpcaoInvalida();
+        }
+    }
+
 
 }
