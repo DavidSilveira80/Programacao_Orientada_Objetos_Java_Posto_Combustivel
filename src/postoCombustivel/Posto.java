@@ -36,9 +36,13 @@ public class Posto {
                     break;
                 case 2:
                     Utilidades.clearTerminal();
-                   Telas.gerarMenuStatusDaBomba();
-                  StatusBomba.geraMenuStatusBomba(arrayBombasCombustivel);
+                    Telas.gerarMenuStatusDaBomba();
+                    StatusBomba.geraMenuStatusBomba(arrayBombasCombustivel);
                   break;
+                case 3:
+                    Utilidades.clearTerminal();
+                    Telas.gerarTelaTipoDeAbastecimento();
+                    break;
                 case 4:
                     Utilidades.clearTerminal();
                     System.out.println("ENCERRANDO. VOLTE SEMPRE.");

@@ -8,6 +8,7 @@ public class Telas {
         System.out.println("====================================");
         System.out.println("   1 - GERAR BOMBA DE COMBUSTÍVEL   ");
         System.out.println("   2 - CONSULTAR STATUS DA BOMBA    ");
+        System.out.println("   3 - ABASTECER                    ");
         System.out.println("   4 - SAIR                         ");
         System.out.println("====================================");
         System.out.print("Informe sua escolha: ");
@@ -74,5 +75,13 @@ public class Telas {
         System.out.println("================================");
         System.out.println("  GERANDO BOMBA DE COMBUSTÍVEL  ");
         System.out.println("================================");
+    }
+
+    public static void gerarTelaTipoDeAbastecimento(){
+        System.out.println("===============================");
+        System.out.println("           ABASTECER           ");
+        System.out.println("    (L) ABASTECER POR LITRO    ");
+        System.out.println("    (V) ABASTECER POR VALOR    ");
+        System.out.print("Informe a sua escolha:           ");
     }
 }
