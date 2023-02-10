@@ -26,7 +26,6 @@ public class MetodosDePesquisaEBusca {
                     resp = bombaPosto.consultar();
                 }
             }
-
         }else{
             resp = "Tipo de Bomba inexistente";
         }
@@ -46,5 +45,4 @@ public class MetodosDePesquisaEBusca {
         }
         return resp;
     }
-
 }

@@ -4,7 +4,13 @@ package postoCombustivel;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import static postoCombustivel.StatusBomba.geraMenuStatusBomba;
+import static postoCombustivel.Telas.*;
 import static postoCombustivel.Utilidades.entradaInteira;
+import static postoCombustivel.Utilidades.clearTerminal;
+import static postoCombustivel.Abastecer.geraMenuAbastecer;
+import static postoCombustivel.CriaBombas.*;
+
 
 public class Posto {
 
@@ -12,7 +18,7 @@ public class Posto {
         int numero;
         numero = entradaInteira();
         while (numero != 1 && numero != 2 && numero != 3 && numero != 4) {
-            Telas.gerarMenuPrincipal();
+            gerarMenuPrincipal();
             numero = entradaInteira();
         }
         return numero;
@@ -22,34 +28,34 @@ public class Posto {
         ArrayList<BombaCombustivel> arrayBombasCombustivel = new ArrayList<>();
         Locale.setDefault(Locale.US);
         
-        Telas.gerarCabecalhoBoasVindas();
+        gerarCabecalhoBoasVindas();
         int parada = 1;
         while (parada == 1) {
-            Telas.gerarMenuPrincipal();
+            gerarMenuPrincipal();
             switch (fluxoMenuPrincipal()) {
                 case 1:
-                    Utilidades.clearTerminal();
-                    Telas.gerarMenuGerarBomba();
-                    CriaBombas.geraMenuCriaBombas(arrayBombasCombustivel);
+                    clearTerminal();
+                    gerarMenuGerarBomba();
+                    geraMenuCriaBombas(arrayBombasCombustivel);
                     break;
                 case 2:
-                    Utilidades.clearTerminal();
-                    Telas.gerarMenuStatusDaBomba();
-                    StatusBomba.geraMenuStatusBomba(arrayBombasCombustivel);
+                    clearTerminal();
+                    gerarMenuStatusDaBomba();
+                    geraMenuStatusBomba(arrayBombasCombustivel);
                   break;
                 case 3:
-                    Utilidades.clearTerminal();
-                    Telas.gerarMenuAbastecerTipoCombustivel();
-                    Abastecer.geraMenuAbastecer(arrayBombasCombustivel);
+                    clearTerminal();
+                    gerarMenuAbastecerTipoCombustivel();
+                    geraMenuAbastecer(arrayBombasCombustivel);
                     break;
                 case 4:
-                    Utilidades.clearTerminal();
+                    clearTerminal();
                     System.out.println("ENCERRANDO. VOLTE SEMPRE.");
                     parada = 2;
                     break;
                 default:
-                    Utilidades.clearTerminal();
-                    Telas.gerarCabecalhoOpcaoInvalida();
+                    clearTerminal();
+                    gerarCabecalhoOpcaoInvalida();
             }
         }
     }

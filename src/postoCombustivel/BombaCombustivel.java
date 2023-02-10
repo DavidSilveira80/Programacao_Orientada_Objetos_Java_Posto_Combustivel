@@ -1,6 +1,6 @@
 package postoCombustivel;
 import java.util.Locale;
-
+import static java.lang.System.out;
 
 public class BombaCombustivel {
     //Atributos
@@ -44,9 +44,9 @@ public class BombaCombustivel {
     public double  abastecerPorLitro(double litrosAbastecer){
         double pagarValor = litrosAbastecer * this.valorPorLitro;
         this.quantidadeDeCombustivel -= litrosAbastecer;
-        System.out.println("++++++GERANDO NOTA+++++");
-        System.out.printf("Litros de %s -> %.2f\n", this.tipoCombustivel, litrosAbastecer);
-        System.out.printf("Valor Total -> R$ %.2f\n", pagarValor);
+        out.println("++++++GERANDO NOTA+++++");
+        out.printf("Litros de %s -> %.2f\n", this.tipoCombustivel, litrosAbastecer);
+        out.printf("Valor Total -> R$ %.2f\n", pagarValor);
         return pagarValor;
     }
 
@@ -54,9 +54,9 @@ public class BombaCombustivel {
         Locale.setDefault(Locale.US);
         double litrosPorValor = valorAbastecer / this.valorPorLitro;
         this.quantidadeDeCombustivel -= litrosPorValor;
-        System.out.println("++++++GERANDO NOTA+++++");
-        System.out.printf("Litros de %s -> %.2f\n", this.tipoCombustivel, litrosPorValor);
-        System.out.printf("Valor Total -> R$ %.2f\n", valorAbastecer);
+        out.println("++++++GERANDO NOTA+++++");
+        out.printf("Litros de %s -> %.2f\n", this.tipoCombustivel, litrosPorValor);
+        out.printf("Valor Total -> R$ %.2f\n", valorAbastecer);
         return litrosPorValor;
     }
 
@@ -106,5 +106,4 @@ public class BombaCombustivel {
         this.quantidadeDeCombustivel = novoEstoqueLitro;
         return String.format("Litros em Estoque alterado para: %.3f.", this.quantidadeDeCombustivel);
     }
-
 }

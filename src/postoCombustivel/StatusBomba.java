@@ -2,6 +2,8 @@ package postoCombustivel;
 
 import java.util.ArrayList;
 
+import static java.lang.System.out;
+import static postoCombustivel.Telas.gerarCabecalhoOpcaoInvalida;
 import static postoCombustivel.Utilidades.clearTerminal;
 import static postoCombustivel.MetodosDePesquisaEBusca.consultaBomba;
 import static postoCombustivel.Utilidades.entradaChar;
@@ -21,27 +23,27 @@ public class StatusBomba {
         switch(fluxoMenuStatusBomba()) {
             case 'G':
                 clearTerminal();
-                System.out.flush();
-                System.out.println(consultaBomba(arrayBombas, "GASOLINA"));
+                out.flush();
+                out.println(consultaBomba(arrayBombas, "GASOLINA"));
                 clearTerminal();
                 break;
             case 'D':
                 clearTerminal();
-                System.out.println(consultaBomba(arrayBombas, "DIESEL"));
+                out.println(consultaBomba(arrayBombas, "DIESEL"));
                 clearTerminal();
                 break;
             case 'A':
                 clearTerminal();
-                System.out.println(consultaBomba(arrayBombas, "ÁLCOOL"));
+                out.println(consultaBomba(arrayBombas, "ÁLCOOL"));
                 clearTerminal();
                 break;
             case 'E':
                 clearTerminal();
-                System.out.println(consultaBomba(arrayBombas, "ETANOL"));
+                out.println(consultaBomba(arrayBombas, "ETANOL"));
                 clearTerminal();
                 break;
             default:
-                Telas.gerarCabecalhoOpcaoInvalida();
+                gerarCabecalhoOpcaoInvalida();
         }
 
     }

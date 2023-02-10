@@ -1,6 +1,7 @@
 package postoCombustivel;
 
 import java.util.ArrayList;
+import static java.lang.System.out;
 
 
 import static postoCombustivel.Utilidades.clearTerminal;
@@ -16,11 +17,10 @@ public class Abastecer {
         }
         return caractere;
     }
-
     public static void geraMenuAbastecer(ArrayList<BombaCombustivel> arrayBombas){
         switch(fluxoMenuAbastecer()) {
             case 'G':
-                System.out.println("ABASTECENDO GASOLINA");
+                out.println("ABASTECENDO GASOLINA");
                 BombaCombustivel bombaGasolina = MetodosDePesquisaEBusca.retornaBomba(arrayBombas,
                         "GASOLINA");
                 TipoAbastecimento.geraMenuTipoAbastecimento(bombaGasolina);

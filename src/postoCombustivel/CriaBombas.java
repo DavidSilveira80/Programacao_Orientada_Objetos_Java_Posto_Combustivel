@@ -1,8 +1,10 @@
 package postoCombustivel;
 
 import java.util.ArrayList;
+import static java.lang.System.out;
 
 import static postoCombustivel.MetodosDePesquisaEBusca.*;
+import static postoCombustivel.Telas.*;
 import static postoCombustivel.Utilidades.*;
 
 public class CriaBombas {
@@ -21,48 +23,48 @@ public class CriaBombas {
 
     public static void criaBombas(ArrayList<BombaCombustivel> arrayCombustivelBomba, String tipoCombustivel) {
         if(existeBombaCombustivel(arrayCombustivelBomba, tipoCombustivel) == false) {
-            System.out.print("Informe o Estoque em Litros: ");
+            out.print("Informe o Estoque em Litros: ");
             double estoqueCombustivel = Utilidades.entradaDouble();
-            System.out.print("Informe o valor por Litro: R$ ");
+            out.print("Informe o valor por Litro: R$ ");
             double valorPorCombustivel = Utilidades.entradaDouble();
             arrayCombustivelBomba.add(new BombaCombustivel(tipoCombustivel, valorPorCombustivel, estoqueCombustivel));
         }else{
-            System.out.println("Bomba de combustível tipo " + tipoCombustivel + "já existe.");
+            out.println("Bomba de combustível tipo " + tipoCombustivel + "já existe.");
         }
     }
     public static void geraMenuCriaBombas(ArrayList<BombaCombustivel> arrayBombas){
         switch(fluxoMenuGeraBomba()){
             case 'G':
                 clearTerminal();
-                System.out.flush();
-                Telas.gerarCabecalhoGerarBombaCombustivel("GASOLINA");
+                out.flush();
+                gerarCabecalhoGerarBombaCombustivel("GASOLINA");
                 criaBombas(arrayBombas, "GASOLINA");
-                Telas.gerarMensagemGerandoBombaDeCombustivel();
+                gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
             case 'D':
                 clearTerminal();
-                Telas.gerarCabecalhoGerarBombaCombustivel("DIESEL");
+                gerarCabecalhoGerarBombaCombustivel("DIESEL");
                 criaBombas(arrayBombas, "DIESEL");
-                Telas.gerarMensagemGerandoBombaDeCombustivel();
+                gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
             case 'A':
                 clearTerminal();
-                Telas.gerarCabecalhoGerarBombaCombustivel("ÁLCOOL");
+                gerarCabecalhoGerarBombaCombustivel("ÁLCOOL");
                 criaBombas(arrayBombas, "ÁLCOOL");
-                Telas.gerarMensagemGerandoBombaDeCombustivel();
+                gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
             case 'E':
                 clearTerminal();
-                Telas.gerarCabecalhoGerarBombaCombustivel("ETANOL");
+                gerarCabecalhoGerarBombaCombustivel("ETANOL");
                 criaBombas(arrayBombas, "ETANOL");
-                Telas.gerarMensagemGerandoBombaDeCombustivel();
+                gerarMensagemGerandoBombaDeCombustivel();
                 clearTerminal();
                 break;
             default:
-                Telas.gerarCabecalhoOpcaoInvalida();
+                gerarCabecalhoOpcaoInvalida();
         }
     }
 }
