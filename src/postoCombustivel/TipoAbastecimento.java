@@ -1,14 +1,18 @@
 package postoCombustivel;
 
+import static java.lang.System.out;
+import static postoCombustivel.Telas.gerarCabecalhoOpcaoInvalida;
+import static postoCombustivel.Telas.gerarTelaTipoDeAbastecimento;
 import static postoCombustivel.Utilidades.entradaChar;
+import static postoCombustivel.Utilidades.entradaDouble;
 
 public class TipoAbastecimento {
     public static char fluxoMenuTipoAbastecimento(){
-        Telas.gerarTelaTipoDeAbastecimento();
+        gerarTelaTipoDeAbastecimento();
         char caractere;
         caractere = entradaChar();
         while (caractere != 'V' && caractere != 'L') {
-            Telas.gerarTelaTipoDeAbastecimento();
+            gerarTelaTipoDeAbastecimento();
             caractere = entradaChar();
         }
         return caractere;
@@ -17,19 +21,19 @@ public class TipoAbastecimento {
     public static void geraMenuTipoAbastecimento(BombaCombustivel tipoBomba){
         switch(fluxoMenuTipoAbastecimento()){
             case 'L':
-                System.out.println("ABASTECER POR LITRO");
-                System.out.print("Informe quantos Litros você quer abastecer: ");
-                double litros = Utilidades.entradaDouble();
-                System.out.println(tipoBomba.abastecerPorLitro(litros));
+                out.println("ABASTECER POR LITRO");
+                out.print("Informe quantos Litros você quer abastecer: ");
+                double litros = entradaDouble();
+                out.println(tipoBomba.abastecerPorLitro(litros));
                 break;
             case 'V':
-                System.out.println("ABASTECER POR VALOR");
-                System.out.print("Informe o valor que você quer abastecer: R$ ");
-                double valor = Utilidades.entradaDouble();
+                out.println("ABASTECER POR VALOR");
+                out.print("Informe o valor que você quer abastecer: R$ ");
+                double valor = entradaDouble();
                 tipoBomba.abastecerPorValor(valor);
                 break;
             default:
-                Telas.gerarCabecalhoOpcaoInvalida();
+                gerarCabecalhoOpcaoInvalida();
         }
     }
 

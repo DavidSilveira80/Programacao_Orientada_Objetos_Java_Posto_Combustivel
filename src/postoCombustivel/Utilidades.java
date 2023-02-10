@@ -2,6 +2,8 @@ package postoCombustivel;
 
 import java.util.Scanner;
 
+import static java.lang.System.out;
+
 public class Utilidades {
 
     //ENTRADAS
@@ -15,7 +17,7 @@ public class Utilidades {
                 numero = Integer.parseInt(entrada.nextLine());
                 continuarLeitura = false;
             } catch (NumberFormatException e) {
-                System.out.println("Entrada com valor inválido. Tente Novamente.");
+                out.println("Entrada com valor inválido. Tente Novamente.");
             }
         }
         return numero;
@@ -37,7 +39,7 @@ public class Utilidades {
                 entraDouble = Double.parseDouble(entrada.nextLine());
                 continuarLeitura = false;
             } catch (NumberFormatException e) {
-                System.out.println("Entrada com valor inválido. Tente Novamente.");
+                out.println("Entrada com valor inválido. Tente Novamente.");
             }
         }
         return entraDouble;
@@ -46,8 +48,8 @@ public class Utilidades {
     //Limpa Tela
     public static void clearTerminal() {
 
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        out.print("\033[H\033[2J");
+        out.flush();
     }
 
 }
